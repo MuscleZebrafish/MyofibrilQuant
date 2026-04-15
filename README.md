@@ -153,9 +153,9 @@ The following steps will generate a Periodicity Histogram, which shows the amoun
 ------------------------------------------------------------------------
 
 ## Myofiber Edge-Center Quantification
+![](README/images/WT_B4_YZ_Lng.png)
 
-#### You will need:
-
+**You will need:**
 
 | Image setup | Programs & Packages | Files from this Github |
 |---|---|---|
@@ -165,9 +165,6 @@ The following steps will generate a Periodicity Histogram, which shows the amoun
 ||[Photoshop](https://www.adobe.com/products/photoshop)|[PositionAnalysis.m](/Edge-Center/PositionAnalysis.m)|
 |||[StainedGlass_SumPeaks.mlx](/Edge-Center/StainedGlass_SumPeaks.mlx) |
 
-### Quantifying Edge-to-Center distances
-
-![](README/images/WT_B4_YZ_Lng.png)
 
 1.  Set up your file structure: Parent folder for the experiment, containing only two subfolders: "Image folder" for raw exports, and a folder named "Segmented" where copies of all images in "Image folder" are saved with the same name but containing the outline layer. In a separate folder.
 
@@ -182,7 +179,6 @@ The following steps will generate a Periodicity Histogram, which shows the amoun
 5.  Set up the “Pencil” tool - 5 pixel width, color = white (255,255,255).
 
 6.  Outline the muscle fibers in this new layer. By following the subsequent rules, we consistently segment the whole image area and the segments look typical for a myotome cross section.
-
     i.  Assume that myofibrils sit on the medial edge of myofibers and begins with F-Actin - so, the white line is slightly medial to the red edge. If two fibers are adjacent, draw the line down the middle.
     ii. Myofibers have at most one nuclei in cross section, but 0 is fine
     iii. A “double-layer” of myofibril indicates the boundary between two myofibers.
