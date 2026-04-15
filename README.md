@@ -1,13 +1,13 @@
----
+<!---
 bibliography: README/myosin-light-chain-proteins-cooperatively-promote-sarcomere-growth-in-fast-twitch-muscle.bib
 output:
   html_document:
     df_print: paged
   word_document: default
   pdf_document: default
----
+--->
 
-[![](README/images/Talbot_Logo.jpg)](talbotlab.org)
+![Talbot Lab Logo](README/images/Talbot_Logo.jpg)
 
 
 
@@ -31,11 +31,11 @@ This Zenodo snapshot captures the programs used in [@Adekeye2024.09.18.613721].
 
 ------------------------------------------------------------------------
 
-## Myofibril Bundle Width & Sarcomere Length {#myofibril-width-length}
+## Myofibril Bundle Width & Sarcomere Length
 
-![](README/images/Figure_S3_WidthMeasurements.jpg){width="1913"}
+<img src="README/images/Figure_S3_WidthMeasurements.jpg" width="1913">
 
-**Associated Files:** "[Myofibril_Width_Length_FIJI.ijm](/MyofibrilWidthLength/Myofibril_Width_Length_FIJI.ijm)" & "[Myofibril_Width_Length_MatLab.mlx](/MyofibrilWidthLength/Myofibril_Width_Length_MatLab.mlx)"
+**Associated files:** "[Myofibril_Width_Length_FIJI.ijm](/MyofibrilWidthLength/Myofibril_Width_Length_FIJI.ijm)" & "[Myofibril_Width_Length_MatLab.mlx](/MyofibrilWidthLength/Myofibril_Width_Length_MatLab.mlx)"
 
 **Necessary programs:** [FIJI](https://imagej.net/software/fiji/downloads) & [MATLAB](https://www.mathworks.com/products/matlab.html)
 
@@ -59,35 +59,23 @@ This Zenodo snapshot captures the programs used in [@Adekeye2024.09.18.613721].
 
 The following steps will generate a Periodicity Histogram, which shows the amount of signal with set periodicity, from 0-4 µm. This can be simplified into a single datapoint, which we term the sarcomeric fraction. To generate a sarcomeric fraction alone, follow steps 1 to 13 of this protocol. To generate a periodicity histogram, continue from steps 14 to 20.
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
-| Programs & Packages                                                                                                                                                                                                                                                                                                                                                                                                         | Files from this Github                                                         |
-+=============================================================================================================================================================================================================================================================================================================================================================================================================================+================================================================================+
-| [FIJI](https://imagej.net/software/fiji/downloads)                                                                                                                                                                                                                                                                                                                                                                          | [SarcomericFraction_FIJI.ijm](/SarcomericFraction/SarcomericFraction_FIJI.ijm) |
-|                                                                                                                                                                                                                                                                                                                                                                                                                             |                                                                                |
-| [MATLAB](https://www.mathworks.com/products/matlab.html) with packages: "[Statistics and Machine Learning](https://www.mathworks.com/products/statistics.html)", "[Curve Fitting Toolbox](https://www.mathworks.com/products/curvefitting.html)", "[Image Processing Toolbox](https://www.mathworks.com/products/image-processing.html)", and "[Signal Processing Toolbox](https://www.mathworks.com/products/signal.html)" | Freq_ByPeak & Sum_Peaks code by marker (below)                                 |
-|                                                                                                                                                                                                                                                                                                                                                                                                                             |                                                                                |
-|                                                                                                                                                                                                                                                                                                                                                                                                                             | [combine_samples_with_ci.mlx](/SarcomericFraction/combine_samples_with_ci.mlx) |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
+| Programs & Packages | Files from this Github|
+|---|---|
+| [FIJI](https://imagej.net/software/fiji/downloads) | [SarcomericFraction_FIJI.ijm](/SarcomericFraction/SarcomericFraction_FIJI.ijm) |
+| [MATLAB](https://www.mathworks.com/products/matlab.html) with packages: "[Statistics and Machine Learning](https://www.mathworks.com/products/statistics.html)", "[Curve Fitting Toolbox](https://www.mathworks.com/products/curvefitting.html)", "[Image Processing Toolbox](https://www.mathworks.com/products/image-processing.html)", and "[Signal Processing Toolbox](https://www.mathworks.com/products/signal.html)" | Freq_ByPeak & Sum_Peaks code by marker (below)|
+| | [combine_samples_with_ci.mlx](/SarcomericFraction/combine_samples_with_ci.mlx) |
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-| File Name                                                                                                                                                                                                                               | Marker  |
-+=========================================================================================================================================================================================================================================+=========+
-| [freq_bypeak_Actin_SarcFrac.mlx](/SarcomericFraction/Actin_Codes/freq_bypeak_Actin_SarcFrac.mlx) & [Sum_Peaks_Actin.mlx](/SarcomericFraction/Actin_Codes/Sum_Peaks_Actin.mlx) \| Actin \|                                               |         |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-| [freq_bypeak_Myosin_SarcFrac.mlx](/SarcomericFraction/MyHC_Codes/freq_bypeak_Myosin_SarcFrac.mlx) & [Sum_Peaks_MyHC.mlx](/SarcomericFraction/MyHC_Codes/Sum_Peaks_MyHC.mlx) \| MyHC \|                                                  |         |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-| [freq_bypeak_mMacActinin_SarcFrac.mlx](/SarcomericFraction/mMac_Actinin_Codes/freq_bypeak_mMacActinin_SarcFrac.mlx) & [Sum_Peaks_mMacActinin.mlx](/SarcomericFraction/mMac_Actinin_Codes/Sum_Peaks_mMacActinin.mlx) \| mMac, Actinin \| |         |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+| File Name | Marker  |
+|---|---|
+| [freq_bypeak_Actin_SarcFrac.mlx](/SarcomericFraction/Actin_Codes/freq_bypeak_Actin_SarcFrac.mlx) & [Sum_Peaks_Actin.mlx](/SarcomericFraction/Actin_Codes/Sum_Peaks_Actin.mlx) | Actin |
+| [freq_bypeak_Myosin_SarcFrac.mlx](/SarcomericFraction/MyHC_Codes/freq_bypeak_Myosin_SarcFrac.mlx) & [Sum_Peaks_MyHC.mlx](/SarcomericFraction/MyHC_Codes/Sum_Peaks_MyHC.mlx) | MyHC |
+| [freq_bypeak_mMacActinin_SarcFrac.mlx](/SarcomericFraction/mMac_Actinin_Codes/freq_bypeak_mMacActinin_SarcFrac.mlx) & [Sum_Peaks_mMacActinin.mlx](/SarcomericFraction/mMac_Actinin_Codes/Sum_Peaks_mMacActinin.mlx) | mMac, Actinin |
 
 ### Glossary
-
-+---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Sarcomeric Mean     | Gives the mean signal within the defined sarcomeric bins. This signal is high in organized sarcomeres and low in disordered muscle fibers                                                                                         |
-+---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| NonSarcomeric       | Gives the mean signal that falls outside of the defined sarcomeic bins. This signal is low in muscle fibers with organized sarcomeres and high in fibers with disordered sarcomeres.                                              |
-+---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|---|---|
+| NonSarcomeric | Gives the mean signal that falls outside of the defined sarcomeic bins. This signal is low in muscle fibers with organized sarcomeres and high in fibers with disordered sarcomeres. |
 | Fraction sarcomeric | Gives the ratio of Sarcomeric Histosums and NonSarcomeric Histosums. Fraction Sarcomeric has proved to be the most consistent and reliable indicator of sarcomericity, best matching what is visible on inspection of the images. |
-+---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #### Generate intensity profiles
 
@@ -100,18 +88,15 @@ The following steps will generate a Periodicity Histogram, which shows the amoun
 4.  An image will pop up to be analyzed. Draw a line across the scalebar to confirm the scaling is accurate. After this, press continue. 
 
 5.  Draw 30 Region of Interest (ROI) lines about 15 µm each across a single fiber type (slow or fast twitch muscle) and add all to the ROI manager. 
-
     i.  Be sure to orient all ROI lines in the general direction of each fiber type for optimal results. Sample evenly across the somite to avoid sample bias. This can be done by drawing ROI lines in a new myofibril for each ROI then by spreading ROIs across myofibrils to sample an entire somite. 
     ii. Draw lines at a similar density regardless of genotype. A nuclear label can help ensure consistency, because lines tend to be drawn on the cytoplasm or myofibrils that form adjacent to the plasma membrane of the myofiber, and there’s often not a 15 µm span between the nuclei.
     iii. To ensure consistency across images, make sure that the “empty” space in central cytoplasm is sampled when there is enough space for a line. This central space tends to be devoid of sarcomeric markers in the wild type, which may contain these markers in a myofibril mutant.
     iv. When analyzing genetic mosaics, it may be impossible to draw 30 ROIs per sample, For instance, not enough fibers may be labeled for GFP+ or too many may be labeled for GFP- measurements. Ensure that at least 3 muscle fibers have GFP (and lack GFP) before beginning; sample images with minimally 10 lines.
 
 6.  The macro will then split the channels and generate intensity profiles for each image
-
-    ![](README/images/clipboard-1887350878.png){width="200"} 
+    <img src="README/images/clipboard-1887350878.png" width="200">
 
 7.  The macro will create sub-folders within the parent folder to store:
-
     i.  CSV files, separated by channel color
     ii. ROI line data
     iii. Processed images to a separate folder. 
@@ -119,7 +104,6 @@ The following steps will generate a Periodicity Histogram, which shows the amoun
 #### Prepare your files
 
 8.  Generate a parent folder for each experimental group, with subfolders:
-
     i)  "Raw Curated"
     ii) "Sarcomere Histogram"
     iii) "Sarcomere Fraction"
@@ -127,16 +111,11 @@ The following steps will generate a Periodicity Histogram, which shows the amoun
     iv) If combining replicate experiments, add an "Individual datasets folder" with each set of raw image data and csv files from the SarcQuant macro, then add a "Pooled" folder where you start combining samples
 
 9.  Curate .csv files
-
     i.  Copy .csv files into the "Raw curated" folder.
-
     ii. Deblind the filenames
-
     iii. Build a file-count document, including numbers of images in each experimental group. Use this to check that all files have copied over appropriately, and that each color shows up in appropriate folders (counts should match).
-
     iv. Standardize file names:  *Group_Well_LabelName_ExptDate_ImagingColor.csv\
         *Ensure that capitalization and spelling is consistent across all Group names
-
     v.  Double-check file counts and names here.
 
 #### Analyze the Sarcomeric Fraction
@@ -146,18 +125,13 @@ The following steps will generate a Periodicity Histogram, which shows the amoun
 11. Distinct programs are used to calculate Sarcomeric Fraction for Actin, MyHC, GFPMylpf, mMac, and Actinin labels. (See [Associated files](#associated-files-1))
 
 12. Run the appropriate FreqByPeak program\
-    ![](README/images/clipboard-683835125.png){width="350"}
+    <img src="README/images/clipboard-683835125.png" width="350">
 
 13. The output of this program shows the Sarcomeric fraction, which is the fraction of repeats in sarcomeric lengths to the total count of identified repeats in any length.
-
     i.  Running the Freq_ByPeak program above will calculate Sarcomeric / nonSarcomeric / Fraction for each file, and export a single dated .csv file within the subfolder, which you've organized by experimental group
-
     ii. Open the output file in Excel, and copy-paste into a new Excel file. Do NOT do any manipulations in the original .csv file.
-
     iii. Add a row with simplified name (e.g. "WT") next to well file name
-
     iv. We recommend importing to standard statistical software, such as JMP. The primary output is the Sarcomeric Fraction column, however, the "Sarcomeric" and "Non-Sarcomeric" data can give a warning as to whether data has been skewed somehow.
-
     v.  The Actin version of the program also includes an approximation of sarcomeric length calculations, based on the major peak.
 
 #### Generate a Periodicity Histogram
@@ -168,27 +142,22 @@ The following steps will generate a Periodicity Histogram, which shows the amoun
 
 16. Copy 95CI files into a single folder, simplifying the names as you go
 
-    ![](README/images/clipboard-300841086.png){width="200"}
+<img src="README/images/clipboard-300841086.png" width="200">
 
 17. Add a Sum_Peaks program to this folder
-
     i.  Modify this to give the colors (Lines 18, 20, 21, 23, 24, 25) and names (Line 33) you want to print out
     ii. Modify this to have appropriate scaling along the Y axis (Line 30)
     iii. Modify this to match the names of combined samples in the MATLAB code to the simplified name explained in 3C above, in all spots formatted as the following: ‘FILENAME’ (Lines 1, 7, 11)
 
 18. Run the Sum_Peaks program. Open the resulting image, modify scale or labels and re-run if needed.\
-    ![](README/images/clipboard-3756542461.png){width="200"}
+<img src="README/images/clipboard-3756542461.png" width="200">
 
 19. Save the graph as both a .fig file for later editing and whatever file type you use in figures.
 
 20. Analyze the Sarcomeric Fraction.
-
     i.  Running the Freq_ByPeak program above will calculate Sarcomeric / nonSarcomeric / Fraction for each file, and export a single dated .csv file within the subfolder, which you've organized by experimental group
-
     ii. Open the output file in Excel, and copy-paste into a new Excel file. Do NOT do any manipulations in the original .csv file.
-
     iii. Add a row with simplified name (e.g. "WT") next to well file name
-
     iv. We recommend importing to standard statistical software, such as JMP. Most of our work uses the simple Sarcomeric Fraction column, however, the "Sarcomeric" and "Non-Sarcomeric" data can give a warning as to whether data has been skewed somehow.
 
 ------------------------------------------------------------------------
@@ -197,19 +166,14 @@ The following steps will generate a Periodicity Histogram, which shows the amoun
 
 #### You will need:
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
-| Image setup                                                                                                                                                                                | Programs & Packages                                                                                 | Files from this Github                                                      |
-+============================================================================================================================================================================================+=====================================================================================================+=============================================================================+
-| Take confocal images with good Z resolution (0.5 µm or less) and export in XYZ. Leica's Lightning and other image augments won't affect this output and are safe to use for this analysis. | -   [MATLAB](https://www.mathworks.com/products/matlab.html)                                        | -   [PositionAnalysisBatch.m](/Edge-Center/PositionAnalysisBatch.m)         |
-|                                                                                                                                                                                            |                                                                                                     |                                                                             |
-|                                                                                                                                                                                            |     -   [Image Processing Toolbox](https://www.mathworks.com/products/image-processing.html)        | -   [Position_Analysis_V2.mlx](/Edge-Center/Position_Analysis_V2.mlx)       |
-|                                                                                                                                                                                            |                                                                                                     |                                                                             |
-|                                                                                                                                                                                            |     -   [Statistics & Machine Learning Toolbox](https://www.mathworks.com/products/statistics.html) | -   [PositionAnalysis.m](/Edge-Center/PositionAnalysis.m)                   |
-|                                                                                                                                                                                            |                                                                                                     |                                                                             |
-|                                                                                                                                                                                            | -   [Photoshop](https://www.adobe.com/products/photoshop)                                           | -   [StainedGlass_Confidence.mlx](/Edge-Center/StainedGlass_Confidence.mlx) |
-|                                                                                                                                                                                            |                                                                                                     |                                                                             |
-|                                                                                                                                                                                            |                                                                                                     | -   [StainedGlass_SumPeaks.mlx](/Edge-Center/StainedGlass_SumPeaks.mlx)     |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+
+| Image setup | Programs & Packages | Files from this Github |
+|---|---|---|
+| Take confocal images with good Z resolution (0.5 µm or less)| [MATLAB](https://www.mathworks.com/products/matlab.html) | [PositionAnalysisBatch.m](/Edge-Center/PositionAnalysisBatch.m) |
+| Export in XYZ | [MATLAB's "Image Processing Toolbox"](https://www.mathworks.com/products/image-processing.html) | [Position_Analysis_V2.mlx](/Edge-Center/Position_Analysis_V2.mlx) |
+|Leica's Lightning and other image augments won't affect this output and are safe to use for this analysis. |[MATLAB'S "Statistics & Machine Learning Toolbox"](https://www.mathworks.com/products/statistics.html)|[StainedGlass_Confidence.mlx](/Edge-Center/StainedGlass_Confidence.mlx)|
+||[Photoshop](https://www.adobe.com/products/photoshop)|[PositionAnalysis.m](/Edge-Center/PositionAnalysis.m)|
+|||[StainedGlass_SumPeaks.mlx](/Edge-Center/StainedGlass_SumPeaks.mlx) |
 
 ### Quantifying Edge-to-Center distances
 
