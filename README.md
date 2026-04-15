@@ -34,12 +34,14 @@ This Zenodo snapshot captures the programs used in [Adekeye et al](https://doi.o
 2.  Run the macro "Myofibril_Width_Length_FIJI.ijm" in FIJI. It will prompt you to:
 
     i.  Load the folder you made in Step 1
+
     ii. Set the scale
+
     iii. Draw at least 30 ROI lines (A, B) along the myofibril component (Sarcomere Length or Myofibril Bundle Width) you would like to measure, then press continue. Measure consistently from 1-2 somites. In our analysis we consistently use images of the dorsal half of the somite, but this software is not dependent upon that restriction. We recommend spreading measurements out such that you measure each myofibril bundle only once, and select a local maximum of myofibril bundle width. Select regions where the borders of the myofibril bundle are clearly defined, not ares where they "fade away", usually due to curved surfaces. Region of interest selection varies by stage; up to 3 days post fertilization (dpf) myofibril bundles are typically separated by cytoplasmic space in the cell center, and by 6 dpf they often expand through much of the cell, leaving very little cytoplasmic space in between the myofibril bundles.
 
-3.  The macro will output a set of processed images, a .csv file of distances, and saved ROIs.
+4.  The macro will output a set of processed images, a .csv file of distances, and saved ROIs.
 
-4.  Process the resulting data in MatLab using the script "Myofibril_Width_Length_MatLab", which will provide a summary table of each sample and its mean distance. This data can also be processed manually in Excel.
+5.  Process the resulting data in MatLab using the script "Myofibril_Width_Length_MatLab", which will provide a summary table of each sample and its mean distance. This data can also be processed manually in Excel.
 
 ------------------------------------------------------------------------
 
@@ -114,7 +116,7 @@ The following steps will generate a Periodicity Histogram, which shows the amoun
 
 11. Distinct programs are used to calculate Sarcomeric Fraction for Actin, MyHC, GFPMylpf, mMac, and Actinin labels. (See [Associated files](#associated-files-1))
 
-12. Run the appropriate FreqByPeak program\
+12. Run the appropriate FreqByPeak program
     <img src="README/images/clipboard-683835125.png" width="350">
 
 13. The output of this program shows the Sarcomeric fraction, which is the fraction of repeats in sarcomeric lengths to the total count of identified repeats in any length.
@@ -196,7 +198,7 @@ The following steps will generate a Periodicity Histogram, which shows the amoun
 
 #### Calculate brightness by position from edge to center
 
-8.  Put the 3 Position Analysis MATLAB files (PositionAnalysisBatch.m, PositionAnalysisBatch.m and Position_Analysis_V2.mlx) together in the folder containing your segmented images.
+8.  Put the 3 Position Analysis MATLAB files (PositionAnalysis.m, PositionAnalysisBatch.m and Position_Analysis_V2.mlx) together in the folder containing your segmented images.
 
 9.  Open folder with files and Position_Analysis_V2.mlx in Matlab
 
@@ -207,28 +209,30 @@ The following steps will generate a Periodicity Histogram, which shows the amoun
 12. Look carefully at each image and make sure segments are correct. Tiny gaps in line drawings lead to giant gaps in the segmentation file. These are easy to spot by color.
 
     i.  If you find gaps: Go back through your segmentation files and close any gaps that are found this way.
+
     ii. Delete the giant set of files produced by this program.
+
     iii. Re-run PositionAnalysisBatch.m. This time, the image check should look good.
 
-13. Transform+compile the xls files. Initially, image files are listed with red, green, blue columns per fish. This needs to be converted into a new file with one color per genotype. Name the new Excel file by genotype & color (e.g. "WTRed"). Find the genotype with the highest row counts (longest column A) and use that as your column A "Distance" for all sheets. Then, paste in all the "red" columns from the appropriate genotype outputs, adding 0s to fill out any columns that are shorter than the Distance you set, and change row A to an identifier for the fish in case you need to check your data. All files taken at a given resolution can be merged together this way. You will generate one file per genotype per color. (e.g. 5 genotypes, 3 colors = 15 files).
+14. Transform+compile the xls files. Initially, image files are listed with red, green, blue columns per fish. This needs to be converted into a new file with one color per genotype. Name the new Excel file by genotype & color (e.g. "WTRed"). Find the genotype with the highest row counts (longest column A) and use that as your column A "Distance" for all sheets. Then, paste in all the "red" columns from the appropriate genotype outputs, adding 0s to fill out any columns that are shorter than the Distance you set, and change row A to an identifier for the fish in case you need to check your data. All files taken at a given resolution can be merged together this way. You will generate one file per genotype per color. (e.g. 5 genotypes, 3 colors = 15 files).
 
     i.  If files are taken at different resolutions, then they first need to binned into rows that are shared across resolutions. This can be done using the Sum function, and reiterated, because each resolution uses the same row counts. Resolutions can be slightly offset from the initial bins, so we recommend manually confirming each bin is correct the first time through. Once set, it can be used across all datasets. Copy\>paste-special\>values of the merged re-binned data into a file. Left column has bin name ("Distance"), then subsequent files are the data per well.
 
-14. Make a new folder with a copy of all files for normalization. Then, sum each column to find total intensity in image region. Then calculate =100\*Cell/Sum. (Sum can be simplified for filling, e.g. B\$26). Sum the resulting table- all column sums should = 100. Copy- paste data into a new file, which is now normalized as a percent of total intensity by distance. Ensure that the column title is still intact, and that the table doesn't extend past the "Distance" column, as trailing 0s in cells can cause errors
+15. Make a new folder with a copy of all files for normalization. Then, sum each column to find total intensity in image region. Then calculate =100\*Cell/Sum. (Sum can be simplified for filling, e.g. B\$26). Sum the resulting table- all column sums should = 100. Copy- paste data into a new file, which is now normalized as a percent of total intensity by distance. Ensure that the column title is still intact, and that the table doesn't extend past the "Distance" column, as trailing 0s in cells can cause errors
 
-15. Place program “StainedGlass_Confidence” in the parent folder of the files (e.g. parent —\> Confidence + Red, Green, Blue folders). Each child folder contains one .xls file per group (e.g. Red \> WTRed, MutantRed) that has the data for which you wish to determine confidence intervals (CI).
+16. Place program “StainedGlass_Confidence” in the parent folder of the files (e.g. parent —\> Confidence + Red, Green, Blue folders). Each child folder contains one .xls file per group (e.g. Red \> WTRed, MutantRed) that has the data for which you wish to determine confidence intervals (CI).
 
-16. Run the program “StainedGlass_Confidence”. Here, for the first time, you will see the plots with confidence intervals for each genotype.
+17. Run the program “StainedGlass_Confidence”. Here, for the first time, you will see the plots with confidence intervals for each genotype.
 
-17. Move all ".95CI\_.mat" files to a single folder to combine subgroups
+18. Move all ".95CI\_.mat" files to a single folder to combine subgroups
 
-18. Use the program “StainedGlass_SumPeaks” to overlay outputs of different groups. This code will need to be modified for each genotype/group you want to include
+19. Use the program “StainedGlass_SumPeaks” to overlay outputs of different groups. This code will need to be modified for each genotype/group you want to include
 
     i.  Make sure the file names in lines 1, 7, and 11 match the file names output in 8, and expand if needed for more than 3 groups (In our file, we demonstrate code to combine the three colors for a given genotype.)
     ii. Check that the colors in lines 20-27 ('r', 'g', and 'b' in our file) match what you want to output
     iii. Repeat for each group
 
-19. Use the 95% confidence intervals from the bootstrap program to determine confidence in difference between groups.
+20. Use the 95% confidence intervals from the bootstrap program to determine confidence in difference between groups.
 
 ------------------------------------------------------------------------
 
