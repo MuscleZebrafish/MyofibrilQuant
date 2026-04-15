@@ -61,7 +61,7 @@ The following steps will generate a Periodicity Histogram, which shows the amoun
 | [freq_bypeak_Myosin_SarcFrac.mlx](/SarcomericFraction/MyHC_Codes/freq_bypeak_Myosin_SarcFrac.mlx) & [Sum_Peaks_MyHC.mlx](/SarcomericFraction/MyHC_Codes/Sum_Peaks_MyHC.mlx) | MyHC |
 | [freq_bypeak_mMacActinin_SarcFrac.mlx](/SarcomericFraction/mMac_Actinin_Codes/freq_bypeak_mMacActinin_SarcFrac.mlx) & [Sum_Peaks_mMacActinin.mlx](/SarcomericFraction/mMac_Actinin_Codes/Sum_Peaks_mMacActinin.mlx) | mMac, Actinin |
 
-### Glossary
+**Glossary**
 | Sarcomeric Mean     | Gives the mean signal within the defined sarcomeric bins. This signal is high in organized sarcomeres and low in disordered muscle fibers                                                                                         |
 |---|---|
 | NonSarcomeric | Gives the mean signal that falls outside of the defined sarcomeic bins. This signal is low in muscle fibers with organized sarcomeres and high in fibers with disordered sarcomeres. |
