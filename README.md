@@ -15,19 +15,9 @@ output:
 
 We developed this suite of programs to analyze several aspects of muscle structure. The suite ranges from measurements on sarcomeres, myofibrils, myofibril bundles, to whole myofibers. We also include a simple module for measuring image brightness in defined regions.
 
-This Zenodo snapshot captures the programs used in [@Adekeye2024.09.18.613721].
+This Zenodo snapshot captures the programs used in [Adekeye et al](https://doi.org/10.1101/2024.09.18.613721)
 
 ------------------------------------------------------------------------
-
-# Table of Contents
-
-1.  [Myofibril Width & Length](#myofibril-width-length)
-
-2.  [Sarcomeric Fraction and Periodicity Histogram]
-
-3.  [Myofiber Edge-Center Quantification]
-
-4.  [Image Brightness]
 
 ------------------------------------------------------------------------
 
