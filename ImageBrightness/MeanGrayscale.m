@@ -1,0 +1,30 @@
+% Select the input and output directories
+inputDir = uigetdir(title='Select Folder to Process');
+outputFilePath = fullfile(uigetdir(title='Select Output Folder'), 'mean_values.csv');
+
+% Get a list of all CSV files in the input directory
+fileList = dir(fullfile(inputDir, '*.csv'));
+
+% Initialize an empty matrix to store the mean intensity
+meanMatrix = [];
+
+% Iterate over all CSV files
+for i = 1:numel(fileList)
+    % Read the current CSV file into a table
+    filePath = fullfile(fileList(i).folder, fileList(i).name);
+    T = readtable(filePath);
+    
+    % Select the desired columns and calculate the mean
+    T2 = T(:, [3,]);
+    T3 = mean(T2{:,:});
+    
+    % Add the mean values to the matrix with the file name as the first column
+    [~, fileName, ~] = fileparts(filePath);
+    meanMatrix = [meanMatrix; {fileName}, T3]; %#ok<AGROW>
+end
+
+%Convert the mean matrix to a table and save to a CSV file
+meanTable = cell2table(meanMatrix)
+
+%% make a table of the 
+writetable(meanTable, outputFilePath);
