@@ -162,10 +162,9 @@ The following steps will generate a Periodicity Histogram, which shows the amoun
 | Image setup | Programs & Packages | Files from this Github |
 |---|---|---|
 | Take confocal images with good Z resolution (0.5 µm or less)| [MATLAB](https://www.mathworks.com/products/matlab.html) | [PositionAnalysisBatch.m](/Edge-Center/PositionAnalysisBatch.m) |
-| Export in XYZ | [MATLAB's "Image Processing Toolbox"](https://www.mathworks.com/products/image-processing.html) | [Position_Analysis_V2.mlx](/Edge-Center/Position_Analysis_V2.mlx) |
+| Export in XYZ | [MATLAB's "Image Processing Toolbox"](https://www.mathworks.com/products/image-processing.html) | [Position_Analysis_V2.mlx](/Edge-Center/PositionAnalysis.m) |
 |Leica's Lightning and other image augments won't affect this output and are safe to use for this analysis. |[MATLAB'S "Statistics & Machine Learning Toolbox"](https://www.mathworks.com/products/statistics.html)|[StainedGlass_Confidence.mlx](/Edge-Center/StainedGlass_Confidence.mlx)|
-||[Photoshop](https://www.adobe.com/products/photoshop)|[PositionAnalysis.m](/Edge-Center/PositionAnalysis.m)|
-|||[StainedGlass_SumPeaks.mlx](/Edge-Center/StainedGlass_SumPeaks.mlx) |
+||[Photoshop](https://www.adobe.com/products/photoshop)|[StainedGlass_SumPeaks.mlx](/Edge-Center/StainedGlass_SumPeaks.m)|
 
 
 1.  Set up your file structure: Parent folder for the experiment, containing only two subfolders: "Image folder" for raw exports, and a folder named "Segmented" where copies of all images in "Image folder" are saved with the same name but containing the outline layer. In a separate folder.
@@ -198,11 +197,11 @@ The following steps will generate a Periodicity Histogram, which shows the amoun
 
 #### Calculate brightness by position from edge to center
 
-8.  Put the 3 Position Analysis MATLAB files (PositionAnalysis.m, PositionAnalysisBatch.m and Position_Analysis_V2.mlx) together in the folder containing your segmented images.
+8.  Put the Position Analysis MATLAB files (PositionAnalysis.m & PositionAnalysisBatch.m) together in the folder containing your segmented images.
 
-9.  Open folder with files and Position_Analysis_V2.mlx in Matlab
+9.  Open folder with files and PositionAnalysis.m in Matlab
 
-10. Update Line 8 in Position_Analysis_V2.mlx with your correct pixels/micron
+10. Update Line 8 in PositionAnalysis.m with your correct pixels/micron
 
 11. Run PositionAnalysisBatch.m, navigating to the appropriate folder. This will segment the files based on your line drawings
 
