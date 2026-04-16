@@ -27,7 +27,7 @@ This Zenodo snapshot captures the programs used in [Adekeye et al](https://doi.o
 
 <img src="README/images/Figure_S3_WidthMeasurements.jpg" width="1913">
 
-**Associated files:** "[Myofibril_Width_Length_FIJI.ijm](/MyofibrilWidthLength/Myofibril_Width_Length_FIJI.ijm)" & "[Myofibril_Width_Length_MatLab.mlx](/MyofibrilWidthLength/Myofibril_Width_Length_MatLab.mlx)"
+**Associated files:** "[Myofibril_Width_Length_FIJI.ijm](/MyofibrilWidthLength/Myofibril_Width_Length_FIJI.ijm)" & "[Myofibril_Width_Length_MatLab.m](/MyofibrilWidthLength/Myofibril_Width_Length_MatLab.m)"
 
 **Necessary programs:** [FIJI](https://imagej.net/software/fiji/downloads) & [MATLAB](https://www.mathworks.com/products/matlab.html)
 
@@ -57,13 +57,13 @@ The following steps will generate a Periodicity Histogram, which shows the amoun
 |---|---|
 | [FIJI](https://imagej.net/software/fiji/downloads) | [SarcomericFraction_FIJI.ijm](/SarcomericFraction/SarcomericFraction_FIJI.ijm) |
 | [MATLAB](https://www.mathworks.com/products/matlab.html) with packages: "[Statistics and Machine Learning](https://www.mathworks.com/products/statistics.html)", "[Curve Fitting Toolbox](https://www.mathworks.com/products/curvefitting.html)", "[Image Processing Toolbox](https://www.mathworks.com/products/image-processing.html)", and "[Signal Processing Toolbox](https://www.mathworks.com/products/signal.html)" | Freq_ByPeak & Sum_Peaks code by marker (below)|
-| | [combine_samples_with_ci.mlx](/SarcomericFraction/combine_samples_with_ci.mlx) |
+| | [combine_samples_with_ci.m](/SarcomericFraction/combine_samples_with_ci.m) |
 
 | File Name | Marker  |
 |---|---|
-| [freq_bypeak_Actin_SarcFrac.mlx](/SarcomericFraction/Actin_Codes/freq_bypeak_Actin_SarcFrac.mlx) & [Sum_Peaks_Actin.mlx](/SarcomericFraction/Actin_Codes/Sum_Peaks_Actin.mlx) | Actin |
-| [freq_bypeak_Myosin_SarcFrac.mlx](/SarcomericFraction/MyHC_Codes/freq_bypeak_Myosin_SarcFrac.mlx) & [Sum_Peaks_MyHC.mlx](/SarcomericFraction/MyHC_Codes/Sum_Peaks_MyHC.mlx) | MyHC |
-| [freq_bypeak_mMacActinin_SarcFrac.mlx](/SarcomericFraction/mMac_Actinin_Codes/freq_bypeak_mMacActinin_SarcFrac.mlx) & [Sum_Peaks_mMacActinin.mlx](/SarcomericFraction/mMac_Actinin_Codes/Sum_Peaks_mMacActinin.mlx) | mMac, Actinin |
+| [freq_bypeak_Actin_SarcFrac.m](/SarcomericFraction/Actin_Codes/freq_bypeak_Actin_SarcFrac.m) & [Sum_Peaks_Actin.m](/SarcomericFraction/Actin_Codes/Sum_Peaks_Actin.m) | Actin |
+| [freq_bypeak_Myosin_SarcFrac.m](/SarcomericFraction/MyHC_Codes/freq_bypeak_Myosin_SarcFrac.m) & [Sum_Peaks_MyHC.m](/SarcomericFraction/MyHC_Codes/Sum_Peaks_MyHC.m) | MyHC |
+| [freq_bypeak_mMacActinin_SarcFrac.m](/SarcomericFraction/mMac_Actinin_Codes/freq_bypeak_mMacActinin_SarcFrac.m) & [Sum_Peaks_mMacActinin.m](/SarcomericFraction/mMac_Actinin_Codes/Sum_Peaks_mMacActinin.m) | mMac, Actinin |
 
 **Glossary**
 | Sarcomeric Mean     | Gives the mean signal within the defined sarcomeric bins. This signal is high in organized sarcomeres and low in disordered muscle fibers                                                                                         |
@@ -164,9 +164,9 @@ The following steps will generate a Periodicity Histogram, which shows the amoun
 | Image setup | Programs & Packages | Files from this Github |
 |---|---|---|
 | Take confocal images with good Z resolution (0.5 µm or less)| [MATLAB](https://www.mathworks.com/products/matlab.html) | [PositionAnalysisBatch.m](/Edge-Center/PositionAnalysisBatch.m) |
-| Export in XYZ | [MATLAB's "Image Processing Toolbox"](https://www.mathworks.com/products/image-processing.html) | [Position_Analysis_V2.mlx](/Edge-Center/PositionAnalysis.m) |
-|Leica's Lightning and other image augments won't affect this output and are safe to use for this analysis. |[MATLAB'S "Statistics & Machine Learning Toolbox"](https://www.mathworks.com/products/statistics.html)|[StainedGlass_Confidence.mlx](/Edge-Center/StainedGlass_Confidence.mlx)|
-||[Photoshop](https://www.adobe.com/products/photoshop)|[StainedGlass_SumPeaks.mlx](/Edge-Center/StainedGlass_SumPeaks.m)|
+| Export in XYZ | [MATLAB's "Image Processing Toolbox"](https://www.mathworks.com/products/image-processing.html) | [PositionAnalysis.m](/Edge-Center/PositionAnalysis.m) |
+|Leica's Lightning and other image augments won't affect this output and are safe to use for this analysis. |[MATLAB'S "Statistics & Machine Learning Toolbox"](https://www.mathworks.com/products/statistics.html)|[StainedGlass_Confidence.m](/Edge-Center/StainedGlass_Confidence.m)|
+||[Photoshop](https://www.adobe.com/products/photoshop)|[StainedGlass_SumPeaks.m](/Edge-Center/StainedGlass_SumPeaks.m)|
 
 
 1.  Set up your file structure: Parent folder for the experiment, containing only two subfolders: "Image folder" for raw exports, and a folder named "Segmented" where copies of all images in "Image folder" are saved with the same name but containing the outline layer. In a separate folder.
