@@ -83,9 +83,9 @@ The following steps will generate a Periodicity Histogram, which shows the amoun
 4.  An image will pop up to be analyzed. Draw a line across the scalebar to confirm the scaling is accurate. After this, press continue. 
 
 5.  Draw 30 Region of Interest (ROI) lines about 15 µm each across a single fiber type (slow or fast twitch muscle) and add all to the ROI manager. 
-    i.  Be sure to orient all ROI lines in the general direction of each fiber type for optimal results. Sample evenly across the somite to avoid sample bias. This can be done by drawing ROI lines in a new myofibril for each ROI then by spreading ROIs across myofibrils to sample an entire somite. 
-    ii. Draw lines at a similar density regardless of genotype. A nuclear label can help ensure consistency, because lines tend to be drawn on the cytoplasm or myofibrils that form adjacent to the plasma membrane of the myofiber, and there’s often not a 15 µm span between the nuclei.
-    iii. To ensure consistency across images, make sure that the “empty” space in central cytoplasm is sampled when there is enough space for a line. This central space tends to be devoid of sarcomeric markers in the wild type, which may contain these markers in a myofibril mutant.
+    i.  Be sure to orient all ROI lines in the general direction of each fiber type for optimal results. Sample evenly across the somite to avoid sample bias. This can be done by drawing ROI lines in a new myofibril bundle for each ROI then by spreading ROIs across myofibril bundles to sample an entire somite. 
+    ii. Draw lines at a similar density regardless of genotype. A nuclear label can help ensure consistency, because lines tend to be drawn on the cytoplasm or myofibril bundles that form adjacent to the plasma membrane of the myofiber, and there’s often not a 15 µm span between the nuclei.
+    iii. To ensure consistency across images, make sure that the “empty” space in central cytoplasm is sampled when there is enough space for a line. This central space tends to be devoid of sarcomeric markers in the wild type, which may contain these markers in a mutant with myofibrillar defects.
     iv. When analyzing genetic mosaics, it may be impossible to draw 30 ROIs per sample, For instance, not enough fibers may be labeled for GFP+ or too many may be labeled for GFP- measurements. Ensure that at least 3 muscle fibers have GFP (and lack GFP) before beginning; sample images with minimally 10 lines.
 
 6.  The macro will then split the channels and generate intensity profiles for each image
@@ -183,13 +183,13 @@ The following steps will generate a Periodicity Histogram, which shows the amoun
 5.  Set up the “Pencil” tool - 5 pixel width, color = white (255,255,255).
 
 6.  Outline the muscle fibers in this new layer. By following the subsequent rules, we consistently segment the whole image area and the segments look typical for a myotome cross section.
-    i.  Assume that myofibrils sit on the medial edge of myofibers and begins with F-Actin - so, the white line is slightly medial to the red edge. If two fibers are adjacent, draw the line down the middle.
+    i.  Assume that myofibril bundles sit on the medial edge of myofibers and begins with F-Actin - so, the white line is slightly medial to the red edge. If two fibers are adjacent, draw the line down the middle.
     ii. Myofibers have at most one nuclei in cross section, but 0 is fine
     iii. A “double-layer” of myofibril indicates the boundary between two myofibers.
-    iv. Interior myofibrils indicate a cell boundary, especially when a cell looks way too big (even when the fibrils are sparse)
+    iv. Interior myofibril bundles indicate a cell boundary, especially when a cell looks way too big (even when the fibrils are sparse)
     v.  Only bifurcate the myofibers if there is some evidence suggesting that it should be bifurcated- like a line with an edge going down the center.
     vi. Only include complete myofibers (not ones missing part of the signal because Z-stack was too shallow.)
-    vii. Fast-twitch myofibrils cannot extend into the slow-twitch domain.
+    vii. Fast-twitch myofibril bundles cannot extend into the slow-twitch domain.
     viii. Don’t outline any fibers in the slow-twitch domain.
 
 7.  Save the segmented image.
